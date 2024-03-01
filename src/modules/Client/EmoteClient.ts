@@ -1,5 +1,7 @@
 import { Emote } from "../../types/Emote";
-import { GetFFZEmotes } from "../FFZ/Index";
+import { GetBTTVEmotes } from "../BTTV/BetterTwitchTv";
+import { fetchUserId } from "../Common/UserModule";
+import { GetFFZEmotes } from "../FFZ/FrankerFaceZ";
 
 export class EmoteClient {
   private profileName: string;
@@ -10,15 +12,21 @@ export class EmoteClient {
 
   public async GetEmoteList(): Promise<Emote[]>
     {
-        const emotes: Emote[] =[];
+
+      //Get user id
+      const userid : string = await fetchUserId(this.profileName);
+
+
 
 
         //Get FFZ emotes
-        const ffzEmotes : Emote[] =  await GetFFZEmotes(this.profileName);
+        const ffzEmotes : Emote[] =  await GetFFZEmotes(userid);
 
-        emotes.push(...ffzEmotes);
+        const bttvEmotes : Emote[] =  await GetBTTVEmotes(userid);
 
-        return emotes;
+
+
+        return [...ffzEmotes,...bttvEmotes];
     }
 }
 

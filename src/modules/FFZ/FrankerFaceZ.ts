@@ -3,13 +3,13 @@ import { FfzEmote, FfzRoom, FfzSet, FfzSetResponse } from "../../types/FfzEmote"
 import { ApiClient } from "../Api/ApiClient";
 
 
-export async function GetFFZEmotes(profileName: string) : Promise<Emote[]>
+export async function GetFFZEmotes(userId: string) : Promise<Emote[]>
 {
-    const userId : string | undefined  = await fetchUserId(profileName);
 
     if (userId === undefined){
         return [];
     }
+
 
     const emotesSet : FfzEmote[] = await GetEmotes(userId);
 
@@ -26,6 +26,11 @@ export async function GetFFZEmotes(profileName: string) : Promise<Emote[]>
     return emotes;
 
 }
+
+
+
+
+
 
 const GlobalEmoteSetId : number = 3;
 
@@ -47,7 +52,3 @@ async function GetEmotes(userId: string) : Promise<FfzEmote[]>
 
 }
 
-async function fetchUserId(profileName: string) : Promise<string | undefined>
-{
-    return (await ApiClient.Get<any>(`https://api.frankerfacez.com/v1/_user/${profileName}`)).user.twitch_id;
-}

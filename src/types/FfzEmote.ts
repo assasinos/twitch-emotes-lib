@@ -1,4 +1,4 @@
-export interface FfzRoom {
+export type FfzRoom = {
     room: any; // Not used
 
     sets: {
@@ -7,7 +7,7 @@ export interface FfzRoom {
   }
   
 
-export interface FfzSet {
+export type FfzSet ={
 
   id : string;
   _type : number;
@@ -17,7 +17,7 @@ export interface FfzSet {
   emoticons : FfzEmote[];
   users : any[] | null; // Not used
 }
-export interface FfzEmote {
+export type FfzEmote = {
     id: number;
     name: string;
     height: number;
@@ -42,6 +42,6 @@ export interface FfzEmote {
   }
 
 
-export interface FfzSetResponse{
+export type FfzSetResponse ={
   set : FfzSet;
 }
