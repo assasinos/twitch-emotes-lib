@@ -1,5 +1,5 @@
 import { Emote } from "../../types/Emote";
-import { FfzEmote, FfzRoom, FfzSet } from "../../types/FfzEmote";
+import { FfzEmote, FfzRoom, FfzSet, FfzSetResponse } from "../../types/FfzEmote";
 import { ApiClient } from "../Api/ApiClient";
 
 
@@ -27,16 +27,23 @@ export async function GetFFZEmotes(profileName: string) : Promise<Emote[]>
 
 }
 
+const GlobalEmoteSetId : number = 3;
 
 async function GetEmotes(userId: string) : Promise<FfzEmote[]>
 {
 
-    const res : FfzRoom = await ApiClient.Get<FfzRoom>(`https://api.frankerfacez.com/v1/room/id/${userId}`);
+    //Get User Emotes
+    const room : FfzRoom = await ApiClient.Get<FfzRoom>(`https://api.frankerfacez.com/v1/room/id/${userId}`);
 
-    const set :FfzSet = res.sets[Object.keys(res.sets)[0]] as FfzSet;
+    const privateSet :FfzSet = room.sets[Object.keys(room.sets)[0]] as FfzSet;
 
 
-    return set.emoticons ;
+
+
+    //Get Global Emotes
+    const globalSet : FfzSetResponse = await ApiClient.Get<FfzSetResponse>(`https://api.frankerfacez.com/v1/set/${GlobalEmoteSetId}`);
+
+    return [... privateSet.emoticons, ... globalSet.set.emoticons];
 
 }
 

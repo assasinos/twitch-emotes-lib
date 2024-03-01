@@ -15,6 +15,7 @@ export interface FfzSet {
   title : string;
   css : string | null;
   emoticons : FfzEmote[];
+  users : any[] | null; // Not used
 }
 export interface FfzEmote {
     id: number;
@@ -39,3 +40,8 @@ export interface FfzEmote {
     created_at: string; // Assuming a string representation of a date-time
     last_updated: string | null;
   }
+
+
+export interface FfzSetResponse{
+  set : FfzSet;
+}
