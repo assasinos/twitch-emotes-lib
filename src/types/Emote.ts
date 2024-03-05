@@ -4,3 +4,9 @@ export type Emote =
     url: string;
 
 }
+
+export type EmoteDictionary = {
+    [name: string]: {
+        url: string;
+    };
+};
