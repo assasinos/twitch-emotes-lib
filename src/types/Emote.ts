@@ -1,12 +1,13 @@
 export type Emote =
 {
     name: string;
-    url: string[];
+    urls: {url:string; size:string;}[];
 
 }
 
 export type EmoteDictionary = {
     [name: string]: {
-        url: string[];
+        urls: {url:string; size:string;}[];
+
     };
 };

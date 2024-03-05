@@ -45,7 +45,7 @@ export class EmoteClient {
         let emotes : Emote[] = [...ffzEmotes,...bttvEmotes, ...sevenTvEmotes];
 
 
-        let dictionary : EmoteDictionary = Object.fromEntries(emotes.map(emote => [emote.name, {url: emote.url}]));
+        let dictionary : EmoteDictionary = Object.fromEntries(emotes.map(emote => [emote.name, {urls: emote.urls}]));
 
         return dictionary;
     }

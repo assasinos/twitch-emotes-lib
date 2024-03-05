@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import { Emote } from "../../types/Emote";
 import { FfzEmote, FfzRoom, FfzSet, FfzSetResponse } from "../../types/FfzEmote";
 import { ApiClient } from "../Api/ApiClient";
@@ -19,7 +20,12 @@ export async function GetFFZEmotes(userId: string) : Promise<Emote[]>
     {
         return {
             name: emote.name,
-            url: [`https://cdn.frankerfacez.com/emoticon/${emote.id}/1`,`https://cdn.frankerfacez.com/emoticon/${emote.id}/2`,`https://cdn.frankerfacez.com/emoticon/${emote.id}/4`] // There is also `https://cdn.frankerfacez.com/emote/${emote.id}/size` endpoint
+            urls: [
+            {url:`https://cdn.frankerfacez.com/emoticon/${emote.id}/1`,size:"1x"},
+            {url:`https://cdn.frankerfacez.com/emoticon/${emote.id}/2`,size:"2x"},
+            {url:`https://cdn.frankerfacez.com/emoticon/${emote.id}/4`,size:"4x"}
+            ] 
+            // There is also `https://cdn.frankerfacez.com/emote/${emote.id}/size` endpoint
         }
     });
 

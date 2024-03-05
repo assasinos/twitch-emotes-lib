@@ -22,10 +22,10 @@ export async function Get7TvEmotes(userId: string) : Promise<Emote[]>
     {
         return {
             name: emote.name,
-            url: [
-                `https://cdn.7tv.app/emote/${emote.id}/1x.webp`,
-                `https://cdn.7tv.app/emote/${emote.id}/2x.webp`,
-                `https://cdn.7tv.app/emote/${emote.id}/3x.webp`
+            urls: [
+                {url:`https://cdn.7tv.app/emote/${emote.id}/1x.webp`, size: "1x"},
+                {url:`https://cdn.7tv.app/emote/${emote.id}/2x.webp`, size: "2x"},
+                {url:`https://cdn.7tv.app/emote/${emote.id}/4x.webp`, size: "4x"}
             ]
         }
     });
