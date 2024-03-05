@@ -30,7 +30,7 @@ async function GetEmotes(userId:string) : Promise<Emote[]>{
     {
         return {
             name: emote.code,
-            url: `https://cdn.betterttv.net/emote/${emote.id}/1x`
+            url: [ `https://cdn.betterttv.net/emote/${emote.id}/1x`, `https://cdn.betterttv.net/emote/${emote.id}/2x`, `https://cdn.betterttv.net/emote/${emote.id}/3x`]
         }
     });
 

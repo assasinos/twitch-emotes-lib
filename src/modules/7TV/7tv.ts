@@ -22,7 +22,11 @@ export async function Get7TvEmotes(userId: string) : Promise<Emote[]>
     {
         return {
             name: emote.name,
-            url: `https://cdn.7tv.app/emote/${emote.id}/1x.avif` // Maybe add other format if avif isn't supported
+            url: [
+                `https://cdn.7tv.app/emote/${emote.id}/1x.webp`,
+                `https://cdn.7tv.app/emote/${emote.id}/2x.webp`,
+                `https://cdn.7tv.app/emote/${emote.id}/3x.webp`
+            ]
         }
     });
 }

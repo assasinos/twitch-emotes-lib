@@ -19,7 +19,7 @@ export async function GetFFZEmotes(userId: string) : Promise<Emote[]>
     {
         return {
             name: emote.name,
-            url: `https://cdn.frankerfacez.com/emoticon/${emote.id}/1` // There is also `https://cdn.frankerfacez.com/emote/${emote.id}/1` endpoint
+            url: [`https://cdn.frankerfacez.com/emoticon/${emote.id}/1`,`https://cdn.frankerfacez.com/emoticon/${emote.id}/2`,`https://cdn.frankerfacez.com/emoticon/${emote.id}/4`] // There is also `https://cdn.frankerfacez.com/emote/${emote.id}/size` endpoint
         }
     });
 
