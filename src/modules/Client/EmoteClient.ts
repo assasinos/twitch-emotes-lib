@@ -1,8 +1,8 @@
-import { Emote, EmoteDictionary } from "../../types/Emote";
-import { Get7TvEmotes } from "../7TV/7tv";
-import { GetBTTVEmotes } from "../BTTV/BetterTwitchTv";
-import { fetchUserId } from "../Common/UserModule";
-import { GetFFZEmotes } from "../FFZ/FrankerFaceZ";
+import { Emote, EmoteDictionary } from "../../types/Emote.js";
+import { Get7TvEmotes } from "../7TV/7tv.js";
+import { GetBTTVEmotes } from "../BTTV/BetterTwitchTv.js";
+import { fetchUserId } from "../Common/UserModule.js";
+import { GetFFZEmotes } from "../FFZ/FrankerFaceZ.js";
 
 export class EmoteClient {
   private profileName: string;

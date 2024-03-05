@@ -1,5 +1,6 @@
-import { Emote } from "../../types/Emote";
-import { ApiClient } from "../Api/ApiClient";
+import { Emote } from "../../types/Emote.js";
+import { BttvEmote, BttvUser } from "../../types/BttvEmote.js";
+import { ApiClient } from "../Api/ApiClient.js";
 
 
 

@@ -1,4 +1,4 @@
-import { ApiClient } from "../Api/ApiClient";
+import { ApiClient } from "../Api/ApiClient.js";
 
 export async function fetchUserId(profileName: string) : Promise<string | undefined>
 {

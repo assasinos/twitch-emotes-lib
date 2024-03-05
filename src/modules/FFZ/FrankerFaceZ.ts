@@ -1,7 +1,7 @@
 import { url } from "inspector";
-import { Emote } from "../../types/Emote";
-import { FfzEmote, FfzRoom, FfzSet, FfzSetResponse } from "../../types/FfzEmote";
-import { ApiClient } from "../Api/ApiClient";
+import { Emote } from "../../types/Emote.js";
+import { FfzEmote, FfzRoom, FfzSet, FfzSetResponse } from "../../types/FfzEmote.js";
+import { ApiClient } from "../Api/ApiClient.js";
 
 
 export async function GetFFZEmotes(userId: string) : Promise<Emote[]>

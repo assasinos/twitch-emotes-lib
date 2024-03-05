@@ -1,6 +1,6 @@
-import { ConnectionResponse, SevenTvEmote } from "../../types/7TvEmotes";
-import { Emote } from "../../types/Emote";
-import { ApiClient } from "../Api/ApiClient";
+import { ConnectionResponse, SevenTvEmote } from "../../types/7TvEmotes.js";
+import { Emote } from "../../types/Emote.js";
+import { ApiClient } from "../Api/ApiClient.js";
 
 
 

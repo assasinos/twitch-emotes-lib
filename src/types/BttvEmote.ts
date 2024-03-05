@@ -1,4 +1,4 @@
-type BttvEmote =
+export type BttvEmote =
  {
     id: string;
     code: string;
@@ -11,7 +11,7 @@ type BttvEmote =
   };
 
 
-  type BttvUser = {
+  export type BttvUser = {
     id :string;
     bots : any[];
     avatar :string;
